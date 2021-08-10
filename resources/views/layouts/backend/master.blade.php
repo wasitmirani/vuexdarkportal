@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loaded semi-dark-layout" lang="en" data-textdirection="ltr" style="--vh:2.5px;">
   <!-- BEGIN: Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
