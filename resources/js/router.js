@@ -14,8 +14,8 @@ const routes = [{
         name: "dashboard",
     },
     {
-        path: '/payment/stripe',
-        component: () => setComponent("payment/Stripe/Stripe"),
+        path: '/articles',
+        component: () => setComponent("content/article/Articles"),
         name: "stripe",
     },
     {

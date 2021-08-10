@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="content-body">
 
                 <!-- Dashboard Analytics Start -->
                 <section id="dashboard-analytics">
@@ -13,13 +12,13 @@
                                     <img src="app-assets/images/elements/decore-right.png" class="congratulations-img-right" alt="card-img-right" />
                                     <div class="avatar avatar-xl bg-primary shadow">
                                         <div class="avatar-content">
-                                            <i data-feather="award" class="font-large-1"></i>
+                                            <i data-feather="user" class="font-large-1"></i>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <h1 class="mb-1 text-white">Congratulations John,</h1>
+                                        <h1 class="mb-1 text-white">Hi, {{authuser.name}}</h1>
                                         <p class="card-text m-auto w-75">
-                                            You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.
+                                            <!-- You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile. -->
                                         </p>
                                     </div>
                                 </div>
@@ -340,8 +339,7 @@
 
                     <!--/ List DataTable -->
                 </section>
-                <!-- Dashboard Analytics end -->
-    </div>
+
   </div>
 </template>
 
@@ -350,10 +348,12 @@ export default {
     data(){
         return {
             name:null,
+            authuser:{},
         };
     },
     mounted(){
         console.log("hello");
+        this.authuser=user;
     },
 
 }

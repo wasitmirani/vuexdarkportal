@@ -1971,9 +1971,9 @@ var routes = [{
   },
   name: "dashboard"
 }, {
-  path: '/payment/stripe',
+  path: '/articles',
   component: function component() {
-    return setComponent("payment/Stripe/Stripe");
+    return setComponent("content/article/Articles");
   },
   name: "stripe"
 }, {
@@ -61555,6 +61555,26 @@ var map = {
 		9,
 		"resources_js_components_ExampleComponent_vue"
 	],
+	"./components/backend/components/StatisticsCard": [
+		"./resources/js/components/backend/components/StatisticsCard.vue",
+		9,
+		"resources_js_components_backend_components_StatisticsCard_vue"
+	],
+	"./components/backend/components/StatisticsCard.vue": [
+		"./resources/js/components/backend/components/StatisticsCard.vue",
+		9,
+		"resources_js_components_backend_components_StatisticsCard_vue"
+	],
+	"./components/backend/content/article/ArticlesComponent": [
+		"./resources/js/components/backend/content/article/ArticlesComponent.vue",
+		9,
+		"resources_js_components_backend_content_article_ArticlesComponent_vue"
+	],
+	"./components/backend/content/article/ArticlesComponent.vue": [
+		"./resources/js/components/backend/content/article/ArticlesComponent.vue",
+		9,
+		"resources_js_components_backend_content_article_ArticlesComponent_vue"
+	],
 	"./components/backend/dashboard/HomeComponent": [
 		"./resources/js/components/backend/dashboard/HomeComponent.vue",
 		9,
@@ -61564,46 +61584,6 @@ var map = {
 		"./resources/js/components/backend/dashboard/HomeComponent.vue",
 		9,
 		"resources_js_components_backend_dashboard_HomeComponent_vue"
-	],
-	"./components/backend/payment/PaymentsComponent": [
-		"./resources/js/components/backend/payment/PaymentsComponent.vue",
-		9,
-		"resources_js_components_backend_payment_PaymentsComponent_vue"
-	],
-	"./components/backend/payment/PaymentsComponent.vue": [
-		"./resources/js/components/backend/payment/PaymentsComponent.vue",
-		9,
-		"resources_js_components_backend_payment_PaymentsComponent_vue"
-	],
-	"./components/backend/payment/Stripe/StripTable": [
-		"./resources/js/components/backend/payment/Stripe/StripTable.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripTable_vue"
-	],
-	"./components/backend/payment/Stripe/StripTable.vue": [
-		"./resources/js/components/backend/payment/Stripe/StripTable.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripTable_vue"
-	],
-	"./components/backend/payment/Stripe/StripeComponent": [
-		"./resources/js/components/backend/payment/Stripe/StripeComponent.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripeComponent_vue"
-	],
-	"./components/backend/payment/Stripe/StripeComponent.vue": [
-		"./resources/js/components/backend/payment/Stripe/StripeComponent.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripeComponent_vue"
-	],
-	"./components/backend/payment/Stripe/StripeLinkGenComponent": [
-		"./resources/js/components/backend/payment/Stripe/StripeLinkGenComponent.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripeLinkGenComponent_vue"
-	],
-	"./components/backend/payment/Stripe/StripeLinkGenComponent.vue": [
-		"./resources/js/components/backend/payment/Stripe/StripeLinkGenComponent.vue",
-		9,
-		"resources_js_components_backend_payment_Stripe_StripeLinkGenComponent_vue"
 	],
 	"./router": [
 		"./resources/js/router.js",
@@ -61780,7 +61760,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_components_backend_payment_PaymentsComponent_vue":1,"resources_js_components_backend_payment_Stripe_StripTable_vue":1,"resources_js_components_backend_payment_Stripe_StripeComponent_vue":1,"resources_js_components_backend_payment_Stripe_StripeLinkGenComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_StatisticsCard_vue":1,"resources_js_components_backend_content_article_ArticlesComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
