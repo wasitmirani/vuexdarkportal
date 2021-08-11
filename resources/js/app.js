@@ -12,11 +12,15 @@ import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 
 import Vuesax from 'vuesax'
-
+import VueI18n from 'vue-i18n'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
 Vue.use(Vuesax);
 
 Vue.use(VueToast);
+
+
+Vue.use(VueI18n)
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -42,15 +46,5 @@ const app = new Vue({
     router,
 
     methods: {
-        groupActive(route) {
-            if (this.$router.history.current.path.includes(route)) {
-                $('ul').removeClass("show");
-
-                $(this).children('ul').addClass('show');
-                return " dropdown nav-item sidebar-group-active active";
-            } else {
-                return "dropdown nav-item";
-            }
-        },
     },
 });

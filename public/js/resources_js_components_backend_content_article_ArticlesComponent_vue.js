@@ -29,12 +29,106 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['label', 'total', 'color', 'value', 'icon'],
   methods: {
     getvalues: function getvalues() {
       return this.value / this.total * 100;
     }
+  },
+  mounted: function mounted() {
+    var lineAreaChart5 = document.querySelector('#line-area-chart-5');
+    var $barColor = '#f3f3f3';
+    var $trackBgColor = '#EBEBEB';
+    var $primary_light = '#A9A2F6';
+    var $success_light = '#55DD92';
+    var $warning_light = '#ffc085';
+    var trafficChartOptions = {
+      chart: {
+        height: 100,
+        type: 'line',
+        dropShadow: {
+          enabled: true,
+          top: 5,
+          left: 0,
+          blur: 4,
+          opacity: 0.1
+        },
+        toolbar: {
+          show: false
+        },
+        sparkline: {
+          enabled: true
+        },
+        grid: {
+          show: false,
+          padding: {
+            left: 0,
+            right: 0
+          }
+        }
+      },
+      colors: [window.colors.solid.primary],
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'smooth',
+        width: 5
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          gradientToColors: [$primary_light],
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100, 100, 100]
+        }
+      },
+      series: [{
+        name: this.label,
+        data: [150, 200, 125, 225, 200, 250]
+      }],
+      xaxis: {
+        labels: {
+          show: false
+        },
+        axisBorder: {
+          show: false
+        }
+      },
+      yaxis: [{
+        y: 0,
+        offsetX: 0,
+        offsetY: 0,
+        padding: {
+          left: 0,
+          right: 0
+        }
+      }],
+      tooltip: {
+        x: {
+          show: false
+        }
+      }
+    };
+    var trafficChart = new ApexCharts(lineAreaChart5, trafficChartOptions);
+    trafficChart.render();
   }
 });
 
@@ -52,6 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_StatisticsCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/StatisticsCard */ "./resources/js/components/backend/components/StatisticsCard.vue");
+//
 //
 //
 //
@@ -344,28 +439,35 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }, [
+      _c("div", { staticClass: "card-header align-items-start pb-0" }, [
         _c("div", [
-          _c("h2", { staticClass: "fw-bolder mb-0" }, [
-            _vm._v(_vm._s(_vm.getvalues()) + "%")
-          ]),
+          _c("h2", { staticClass: "fw-bolder" }, [_vm._v(_vm._s(this.value))]),
           _vm._v(" "),
           _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.label))])
         ]),
         _vm._v(" "),
-        _c("div", { class: "avatar bg-light-" + _vm.color + " p-50 m-0" }, [
-          _c("div", { staticClass: "avatar-content" }, [
-            _c("i", {
-              staticClass: "font-medium-5",
-              attrs: { "data-feather": _vm.icon }
-            })
-          ])
-        ])
-      ])
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "line-area-chart-5" } })
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "avatar bg-light-primary p-50" }, [
+      _c("div", { staticClass: "avatar-content" }, [
+        _c("i", {
+          staticClass: "font-medium-5",
+          attrs: { "data-feather": "monitor" }
+        })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -401,7 +503,7 @@ var render = function() {
                   label: "Articles",
                   total: 500,
                   value: 30,
-                  icon: "file",
+                  icon: "fas fa-user",
                   color: "success"
                 }
               })
@@ -418,7 +520,8 @@ var render = function() {
             { staticClass: "card-header" },
             [
               _c("h2", { staticClass: "card-title" }, [
-                _vm._v("All Articles\n                     "),
+                _c("span", [_vm._v("All Articles")]),
+                _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "mt-2" },

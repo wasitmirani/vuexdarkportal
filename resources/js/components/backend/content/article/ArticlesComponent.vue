@@ -4,14 +4,15 @@
           <div class="col-12">
               <div class="row">
                       <div class="col-lg-3 col-sm-6 col-12">
-                          <StatisticsCard label="Articles" :total="500" :value="30" icon="file" color="success"></StatisticsCard>
+                          <StatisticsCard label="Articles" :total="500" :value="30" icon="fas fa-user" color="success"></StatisticsCard>
                       </div>
               </div>
           </div>
          <div class="col-12">
             <div class="card">
                <div class="card-header">
-                  <h2 class="card-title">All Articles
+                  <h2 class="card-title">
+                  <span >All Articles</span>
                         <div class="mt-2">
                              <vs-input color="#7d33ff" v-model="query" placeholder="Search Articles" />
                         </div>
