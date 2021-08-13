@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/extensions/toastr.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
+
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -38,7 +39,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/plugins/extensions/ext-component-toastr.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/app-invoice-list.min.css')}}">
     <!-- END: Page CSS-->
-
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/select/select2.min.css')}}">
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <!-- END: Custom CSS-->
@@ -117,6 +118,7 @@
     <script src="{{asset('app-assets/js/scripts/pages/app-invoice-list.min.js')}}"></script>
     <!-- END: Page JS-->
     <script src="{{asset('app-assets/js/scripts/pages/app-invoice-list.min.js')}}"></script>
+    <script src="{{asset('assets/select/select2.min.js')}}"></script>
     <!-- Scripts -->
 
     <script>
@@ -149,6 +151,7 @@
         }
       })
     </script>
+@yield('scripts')
   </body>
   <!-- END: Body-->
 </html>

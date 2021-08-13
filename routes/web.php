@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChargeController;
+use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\BackendController;
 
 /*
@@ -30,3 +32,11 @@ Route::get('/dashboard',[BackendController::class,'index'])->name('dashboard');
 
 
 Route::get('/payment/customer-area/pay-secure/{package_name}/{token}',[ChargeController::class,'chargeStripePayment'])->name('charge.stripe.payment');
+
+
+    Route::resource('roles',RoleController::class);
+Route::resource('users',UserController::class);
+
+
+
+

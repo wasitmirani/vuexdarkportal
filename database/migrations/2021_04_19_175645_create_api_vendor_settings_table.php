@@ -16,7 +16,7 @@ class CreateApiVendorSettingsTable extends Migration
         Schema::create('api_vendor_settings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('api_vendor_id')->nullable()->constrained('api_vendors');
-            $table->foreignId('company_id')->nullable()->constrained('companies');
+
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->json('api_configuration')->nullable();

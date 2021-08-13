@@ -63,10 +63,54 @@ class HelperComponent
                             "/blogs",
                         ),
 
+
                     ]
-                ]
+                    ],
+
 
             ],
+            [
+
+                "menu" => [
+                    "title" => 'User Management',
+                    "icon" => "user",
+                    "color_code" => "",
+                    // "can" => "",
+                    // "v-can" => "",
+                    "sub_menu" => [
+                        setSubMenu(
+                            "/users",
+                            "Users",
+                            "users",
+                            null,
+                            null,
+                            null,
+                        ),
+                        setSubMenu(
+                            null,
+                            "Roles",
+                            "roles",
+                            null,
+                            null,
+                            "/roles",
+                        ),
+                        setSubMenu(
+                            null,
+                            "Permissions",
+                            "permission",
+                            null,
+                            null,
+                            "/permissions",
+                        ),
+
+
+                    ]
+                    ],
+
+
+            ],
+
+
 
         ];
         }
