@@ -83,12 +83,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
         $user = User::find($id);
+
         $roles = Role::pluck('name','name')->all();
+
         $userRole = $user->roles->pluck('name','name')->all();
-
-
-        return view('users.edit',compact('user','roles','userRole'));
+       return view('backend.pages.users.edit',compact('user','roles','userRole'));
     }
 
     /**
@@ -105,7 +106,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'min:3','max:50'],
             'email' => ['required',  'email', 'unique:users,email,'.$request->id],
             'phone' => ['required',  'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:255', 'unique:users,phone,'.$request->id],
-            
+
         ]);
 
         if($request->password!=""){
@@ -123,7 +124,7 @@ class UserController extends Controller
 
         ]);
 
-        return response()->json();
+        return back()->with('message','User Updated Succesfully');
     }
 
     /**

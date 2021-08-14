@@ -51,10 +51,13 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Role</label>
+
                       <select class="form-control" name="role">
                           <option value="">Select Role</option>
                           @foreach ($roles as $role)
-                           <option value="{{ $role}}">{{ $role }}</option>
+                           @foreach( $userRole as $urole)
+                           <option @if($role == $urole) selected @endif value="{{ $role}}">{{ $role }}</option>
+                           @endforeach
 
                           @endforeach
                       </select>
