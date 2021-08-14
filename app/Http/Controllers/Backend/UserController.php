@@ -102,12 +102,12 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        $request->validate([
-            'name' => ['required', 'string', 'min:3','max:50'],
-            'email' => ['required',  'email', 'unique:users,email,'.$request->id],
-            'phone' => ['required',  'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:255', 'unique:users,phone,'.$request->id],
+        // $request->validate([
+        //     'name' => ['required', 'string', 'min:3','max:50'],
+        //     'email' => ['required',  'email', 'unique:users,email,'.$request->id],
+        //     'phone' => ['required',  'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:255', 'unique:users,phone,'.$request->id],
 
-        ]);
+        // ]);
 
         if($request->password!=""){
               $request->validate([
