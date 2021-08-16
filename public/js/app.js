@@ -1988,7 +1988,8 @@ var routes = [{
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: routes,
   linkActiveClass: "active",
-  linkExactActiveClass: "active"
+  linkExactActiveClass: "active",
+  mode: 'history'
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 

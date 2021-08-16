@@ -11,13 +11,7 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
-    // function __construct()
-    // {
-    //      $this->middleware('permission:role-list');
-    //      $this->middleware('permission:role-create', ['only' => ['create','store']]);
-    //      $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
-    //      $this->middleware('permission:role-delete', ['only' => ['destroy']]);
-    // }
+
 
     /**
      * Display a listing of the resource.
@@ -30,7 +24,10 @@ class RoleController extends Controller
 
         $roles=Role::orderBy('name','ASC')
         ->with('users')
+        ->with('permissions')
         ->get();
+
+    
 
 
 

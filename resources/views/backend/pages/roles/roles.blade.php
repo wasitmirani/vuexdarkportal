@@ -36,8 +36,8 @@
                       <th>#</th>
                      <th >Role Name</th>
                      <th >Users</th>
-                      <th >Created</th>
-                      <th >Action</th>
+                    <th>permissions</th>
+                    <th >Action</th>
                   </tr>
                </thead>
                <tbody>
@@ -45,12 +45,18 @@
 
                  <tr >
                         <th >{{ $role->id }}</th>
+
                         <td>{{ $role->name }}</td>
 
 
                         <td>
                             @foreach($role->users as $user)
                             {{ $user->name }},
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($role->permissions as $permission)
+                            {{ $permission->name }},
                             @endforeach
                         </td>
 
