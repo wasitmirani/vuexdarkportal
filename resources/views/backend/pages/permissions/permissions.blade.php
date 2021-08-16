@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12">
-               Permissions
+
                 </div>
         </div>
     </div>
@@ -14,9 +14,6 @@
             <h2 class="card-title">
             <span >All Permissions</span>
 
-                  <div class="mt-2">
-                       <input color="#7d33ff"  placeholder="Search Articles" />
-                  </div>
 
               </h2>
                 <a href="{{ route('permissions.create') }}" size="large"    gradient   :active="true">

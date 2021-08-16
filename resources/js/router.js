@@ -24,6 +24,11 @@ const routes = [{
         name: "users",
     },
     {
+        path: '/roles',
+        component: () => setComponent("content/roles/Roles"),
+        name: "roles",
+    },
+    {
         path: '/payment/stripe/generate/link/',
         component: () => setComponent("payment/Stripe/StripeLinkGen"),
         name: "Stripe Payment Link Generate",

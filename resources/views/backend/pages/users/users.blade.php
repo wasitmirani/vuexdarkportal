@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12">
-                   Users
+
                 </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
       <div class="card">
          <div class="card-header">
             <h2 class="card-title">
-            <span >All Users</span>
+            <span >Users List</span>
                   {{-- <div class="mt-2">
 
                        <input color="#7d33ff"  placeholder="Search Articles" />
@@ -55,7 +55,7 @@
                        </td>
                         <td>
                             <a class="btn btn-warning" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                             |
+                        |
                              <form action="{{ route('users.destroy',$user->id) }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}

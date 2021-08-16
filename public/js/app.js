@@ -1976,6 +1976,12 @@ var routes = [{
   },
   name: "users"
 }, {
+  path: '/roles',
+  component: function component() {
+    return setComponent("content/roles/Roles");
+  },
+  name: "roles"
+}, {
   path: '/payment/stripe/generate/link/',
   component: function component() {
     return setComponent("payment/Stripe/StripeLinkGen");
@@ -63812,6 +63818,16 @@ var map = {
 		9,
 		"resources_js_components_backend_content_article_ArticlesComponent_vue"
 	],
+	"./components/backend/content/roles/RolesComponent": [
+		"./resources/js/components/backend/content/roles/RolesComponent.vue",
+		9,
+		"resources_js_components_backend_content_roles_RolesComponent_vue"
+	],
+	"./components/backend/content/roles/RolesComponent.vue": [
+		"./resources/js/components/backend/content/roles/RolesComponent.vue",
+		9,
+		"resources_js_components_backend_content_roles_RolesComponent_vue"
+	],
 	"./components/backend/content/users/UsersComponent": [
 		"./resources/js/components/backend/content/users/UsersComponent.vue",
 		9,
@@ -64007,7 +64023,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_StatisticsCard_vue":1,"resources_js_components_backend_content_article_ArticlesComponent_vue":1,"resources_js_components_backend_content_users_UsersComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_StatisticsCard_vue":1,"resources_js_components_backend_content_article_ArticlesComponent_vue":1,"resources_js_components_backend_content_roles_RolesComponent_vue":1,"resources_js_components_backend_content_users_UsersComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
