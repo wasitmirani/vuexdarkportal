@@ -14,9 +14,10 @@
          <div class="card-header">
             <h2 class="card-title">
             <span >All Users</span>
-                  <div class="mt-2">
+                  {{-- <div class="mt-2">
+
                        <input color="#7d33ff"  placeholder="Search Articles" />
-                  </div>
+                  </div> --}}
 
               </h2>
                 <a href="{{ route('users.create') }}" size="large"    gradient   :active="true">
