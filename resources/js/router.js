@@ -19,6 +19,11 @@ const routes = [{
         name: "stripe",
     },
     {
+        path: '/users',
+        component: () => setComponent("content/users/Users"),
+        name: "users",
+    },
+    {
         path: '/payment/stripe/generate/link/',
         component: () => setComponent("payment/Stripe/StripeLinkGen"),
         name: "Stripe Payment Link Generate",
@@ -33,7 +38,7 @@ const router = new VueRouter({
     routes,
     linkActiveClass: "active",
     linkExactActiveClass: "active"
-        // short for `routes: routes`
+
 })
 
 

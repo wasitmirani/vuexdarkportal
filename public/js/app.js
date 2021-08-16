@@ -1970,6 +1970,12 @@ var routes = [{
   },
   name: "stripe"
 }, {
+  path: '/users',
+  component: function component() {
+    return setComponent("content/users/Users");
+  },
+  name: "users"
+}, {
   path: '/payment/stripe/generate/link/',
   component: function component() {
     return setComponent("payment/Stripe/StripeLinkGen");
@@ -1982,8 +1988,7 @@ var routes = [{
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: routes,
   linkActiveClass: "active",
-  linkExactActiveClass: "active" // short for `routes: routes`
-
+  linkExactActiveClass: "active"
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 
@@ -63806,6 +63811,16 @@ var map = {
 		9,
 		"resources_js_components_backend_content_article_ArticlesComponent_vue"
 	],
+	"./components/backend/content/users/UsersComponent": [
+		"./resources/js/components/backend/content/users/UsersComponent.vue",
+		9,
+		"resources_js_components_backend_content_users_UsersComponent_vue"
+	],
+	"./components/backend/content/users/UsersComponent.vue": [
+		"./resources/js/components/backend/content/users/UsersComponent.vue",
+		9,
+		"resources_js_components_backend_content_users_UsersComponent_vue"
+	],
 	"./components/backend/dashboard/HomeComponent": [
 		"./resources/js/components/backend/dashboard/HomeComponent.vue",
 		9,
@@ -63991,7 +64006,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_StatisticsCard_vue":1,"resources_js_components_backend_content_article_ArticlesComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_StatisticsCard_vue":1,"resources_js_components_backend_content_article_ArticlesComponent_vue":1,"resources_js_components_backend_content_users_UsersComponent_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_store_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

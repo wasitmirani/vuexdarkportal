@@ -50,7 +50,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Role</label>
-                      <select class="form-control" name="role">
+                      <select class="form-control js-example-basic-multiple" name="roles[]" multiple>
                           <option value="">Select Role</option>
                           @foreach ($roles as $role)
                            <option value="{{ $role}}">{{ $role }}</option>
@@ -69,4 +69,14 @@
     </div>
 
 </div>
+@endsection
+@section('scripts')
+
+        <script>
+        $(document).ready(function() {
+
+    $('.js-example-basic-multiple').select2();
+});
+
+</script>
 @endsection

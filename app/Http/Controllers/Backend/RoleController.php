@@ -33,6 +33,7 @@ class RoleController extends Controller
         ->get();
 
 
+
        return view('backend.pages.roles.roles',['roles'=>$roles]);
     }
 
@@ -44,6 +45,7 @@ class RoleController extends Controller
     public function create()
     {
         $users = User::all();
+
         return view('backend.pages.roles.create',compact('users'));
     }
 
@@ -59,7 +61,7 @@ class RoleController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255','unique:roles'],
         ]);
-        // $users=explode(",",$request->users);
+        $users= json_encode($request->users);
 
         $user_collection=User::WhereIn('id',  $request->users)->get();
 
@@ -89,6 +91,7 @@ class RoleController extends Controller
     public function edit($id)
     {
         $role = Role::with('users')->find($id);
+
         $users = User::all();
         return view('backend.pages.roles.edit',compact('role','users'));
     }
@@ -108,7 +111,8 @@ class RoleController extends Controller
         ]);
 
 
-        $role = Role::find($request->id);
+        $role = Role::find($id);
+
         $role->name=$request->name;
         $role->save();
         $role->users()->sync($request->users);
@@ -124,6 +128,7 @@ class RoleController extends Controller
 
     public function destroy($id)
     {
+
       Role::destroy($id);
       return back()->with('message','Role Deleted Successfully');
     }

@@ -19,30 +19,30 @@
                      {{ $errors->all() }}
                     @endif
 
-                <span >Add Roles</span>
+                <span >Add Permissions</span>
 
 
                   </h2>
-                    <a href="{{ route('roles.index') }}" size="large"    gradient   :active="true">
-                         Roles
+                    <a href="{{ route('permissions.index') }}" size="large"    gradient   :active="true">
+                         Permissions
                       </a>
              </div>
              <div class="card-body">
-<form  action="{{ route('roles.store') }}"  method="post">
+<form  action="{{ route('permissions.store') }}"  method="post">
 
     {{ csrf_field() }}
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Role Name</label>
-      <input type="type" name="name" class="form-control"  placeholder="Enter Role Name">
+      <label for="exampleInputEmail1">Permission Name</label>
+      <input type="type" name="name" class="form-control"  placeholder="Enter Permission Name">
 
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Users</label>
-    <select class="form-control js-example-basic-multiple" name="users[]" multiple="multiple" >
-        <option value="">Select User</option>
-        @foreach ($users as $user)
-        <option value="{{ $user->id }}">{{ $user->name }}</option>
+      <label for="exampleInputPassword1">Roles</label>
+    <select class="form-control js-example-basic-multiple" name="roles[]" multiple="multiple" >
+        <option value="">Select Roles</option>
+        @foreach ($roles as $role)
+        <option value="{{ $role->id }}">{{ $role->name }}</option>
 
         @endforeach
 
@@ -55,6 +55,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 @section('scripts')
 

@@ -19,7 +19,8 @@ class UserController extends Controller
     public function index()
     {
 
-     $users = User::latest()->paginate(env('PER_PAGE'));
+     $users = User::with('roles')->latest()->paginate(env('PER_PAGE'));
+
      return view('backend.pages.users.users',['users'=>$users]);
 
     }
@@ -44,15 +45,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
-            'role' => 'required'
+            'roles' => 'required'
         ]);
 
 
+
         $input = $request->all();
+
         $input['password'] = Hash::make($input['password']);
 
 
@@ -84,11 +88,13 @@ class UserController extends Controller
     public function edit($id)
     {
 
-        $user = User::find($id);
+        $user = User::with('roles')->find($id);
 
-        $roles = Role::pluck('name','name')->all();
+        $roles = Role::all();
 
-        $userRole = $user->roles->pluck('name','name')->all();
+
+        $userRole = $user->roles->all();
+
        return view('backend.pages.users.edit',compact('user','roles','userRole'));
     }
 
@@ -102,29 +108,34 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        // $request->validate([
-        //     'name' => ['required', 'string', 'min:3','max:50'],
-        //     'email' => ['required',  'email', 'unique:users,email,'.$request->id],
-        //     'phone' => ['required',  'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:255', 'unique:users,phone,'.$request->id],
 
-        // ]);
+        $request->validate([
+            'name' => ['required', 'string', 'min:3','max:50'],
+            'email' => ['required',  'email'],
+
+
+        ]);
+
 
         if($request->password!=""){
               $request->validate([
                     'password' => ['required', 'string', 'min:8'],
               ]);
             User::where('id',$request->id)->update(['password'=>Hash::make($request->password)]);
+
         }
 
-        //   $user=User::where('id',$request->id)->first();
-          User::where('id',$request->id)->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
+          $user = User::where('id',$id)->first();
+          $user->name = $request->name;
+          $user->email = $request->email;
 
-        ]);
 
-        return back()->with('message','User Updated Succesfully');
+ if( $user->save()){
+
+    return back()->with('message','User Updated Succesfully');
+
+ }
+
     }
 
     /**
@@ -135,6 +146,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+
         User::find($id)->delete();
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');

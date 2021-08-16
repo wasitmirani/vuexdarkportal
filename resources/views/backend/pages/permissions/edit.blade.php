@@ -19,30 +19,33 @@
                      {{ $errors->all() }}
                     @endif
 
-                <span >Add Roles</span>
+                <span >Edit Permissions</span>
 
 
                   </h2>
-                    <a href="{{ route('roles.index') }}" size="large"    gradient   :active="true">
-                         Roles
+                    <a href="{{ route('permissions.index') }}" size="large"    gradient   :active="true">
+                         Permissions
                       </a>
              </div>
              <div class="card-body">
-<form  action="{{ route('roles.store') }}"  method="post">
+<form  action="{{ route('permissions.update',$permission->id) }}"  method="post">
 
     {{ csrf_field() }}
+    {{ method_field('PUT') }}
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Role Name</label>
-      <input type="type" name="name" class="form-control"  placeholder="Enter Role Name">
+      <label for="exampleInputEmail1">Permission Name</label>
+      <input type="type" name="name" class="form-control"  value="{{ $permission->name }}"  placeholder="Enter Role Name">
 
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Users</label>
-    <select class="form-control js-example-basic-multiple" name="users[]" multiple="multiple" >
-        <option value="">Select User</option>
-        @foreach ($users as $user)
-        <option value="{{ $user->id }}">{{ $user->name }}</option>
+      <label for="exampleInputPassword1">Roles</label>
+    <select class="form-control js-example-basic-multiple" name="roles[]" multiple="multiple" >
+        <option value="">Select Roles</option>
+        @foreach ($roles as $role)
+         @foreach($permission->roles as $prole)
+        <option @if($prole->id == $role->id) selected @endif value="{{ $role->id }}">{{ $role->name }}</option>
+         @endforeach
 
         @endforeach
 
@@ -55,6 +58,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 @section('scripts')
 

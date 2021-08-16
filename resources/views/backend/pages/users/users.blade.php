@@ -45,18 +45,19 @@
                         <th scope="row">{{ $user->id }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        @if(!empty($user->getRoleNames()))
-                        @foreach($user->getRoleNames() as $v)
-                           <label class="badge badge-success">{{ $v }}</label>
-                        @endforeach
-                      @endif
+                       <td>
 
+                        @foreach($user->roles as $v)
+                         {{ $v->name }}|
+                        @endforeach
+
+                       </td>
                         <td>
                             <a class="btn btn-warning" href="{{ route('users.edit',$user->id) }}">Edit</a>
                              |
                              <form action="{{ route('users.destroy',$user->id) }}" method="post">
                                 {{ csrf_field() }}
-                                {{ method_field('PUT') }}
+                                {{ method_field('DELETE') }}
                                 <button type="submit"  class="btn btn-danger delButton"  data-id="{{ $user->id }}">
 
                                     Delete

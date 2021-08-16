@@ -52,13 +52,13 @@
                       <div class="form-group">
                         <label for="exampleInputPassword1">Role</label>
 
-                      <select class="form-control" name="role">
+                      <select class="form-control js-example-basic-multiple" name="roles[]" multiple>
                           <option value="">Select Role</option>
-                          @foreach ($roles as $role)
-                           @foreach( $userRole as $urole)
-                           <option @if($role == $urole) selected @endif value="{{ $role}}">{{ $role }}</option>
-                           @endforeach
 
+                          @foreach ($roles as $role)
+                          @foreach($userRole as $urole)
+                           <option @if($role->id == $urole->id) selected @endif  value="{{ $role->name }}">{{ $role->name }}</option>
+                             @endforeach
                           @endforeach
                       </select>
 
@@ -74,3 +74,14 @@
 
 </div>
 @endsection
+@section('scripts')
+
+        <script>
+        $(document).ready(function() {
+
+    $('.js-example-basic-multiple').select2();
+});
+
+</script>
+@endsection
+

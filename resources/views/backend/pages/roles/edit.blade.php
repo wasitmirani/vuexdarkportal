@@ -41,8 +41,9 @@
     <select class="form-control js-example-basic-multiple" name="users[]" multiple="multiple" >
         <option value="">Select User</option>
         @foreach ($users as $user)
-        <option  value="{{ $user->id }}">{{ $user->name }}</option>
-
+         @foreach($role->users as $use)
+        <option @if($user->id == $use->id) selected @endif value="{{ $user->id }}">{{ $user->name }}</option>
+         @endforeach
         @endforeach
 
     </select>

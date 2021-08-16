@@ -1,11 +1,10 @@
-
 @extends('layouts.backend.master')
 @section('content')
 <div class="row" id="table-bordered">
     <div class="col-12">
         <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12">
-                   Roles
+               Permissions
                 </div>
         </div>
     </div>
@@ -13,15 +12,15 @@
       <div class="card">
          <div class="card-header">
             <h2 class="card-title">
-            <span >All Roles</span>
+            <span >All Permissions</span>
 
                   <div class="mt-2">
                        <input color="#7d33ff"  placeholder="Search Articles" />
                   </div>
 
               </h2>
-                <a href="{{ route('roles.create') }}" size="large"    gradient   :active="true">
-                      Add Roles
+                <a href="{{ route('permissions.create') }}" size="large"    gradient   :active="true">
+                      Add Permission
                   </a>
          </div>
          <div class="card-body">
@@ -34,34 +33,33 @@
                <thead>
                   <tr>
                       <th>#</th>
-                     <th >Role Name</th>
-                     <th >Users</th>
-                      <th >Created</th>
+                     <th >Permission Name</th>
+                      <th >Role</th>
                       <th >Action</th>
                   </tr>
                </thead>
                <tbody>
-                   @foreach($roles as $role)
+                   @foreach($permissions as $permission)
 
                  <tr >
-                        <th >{{ $role->id }}</th>
-                        <td>{{ $role->name }}</td>
+                        <th >{{ $permission->id }}</th>
+                        <td>{{ $permission->name }}</td>
 
 
                         <td>
-                            @foreach($role->users as $user)
-                            {{ $user->name }},
+                            @foreach($permission->roles as $role)
+                            {{ $role->name }},
                             @endforeach
                         </td>
 
                         <td>
-                         <a class="btn btn-warning" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+                         <a class="btn btn-warning" href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
                           |
 
-                          <form action="{{ route('roles.destroy',$role->id) }}" method="post">
+                          <form action="{{ route('permissions.destroy',$permission->id) }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button type="submit"  class="btn btn-danger delButton"  data-id="{{ $role->id }}">
+                            <button type="submit"  class="btn btn-danger delButton"  data-id="{{ $permission->id }}">
 
                                 Delete
 
@@ -78,25 +76,6 @@
       </div>
    </div>
 </div>
+
+
 @endsection
-@section('scripts')
-<script>
-    // $(document).ready(function(){
-    //   $('.delButton').on('click',function(){
-    //       var id = $(this).data('id');
-    //       $.ajax({
-    //           'url':'/roles/update'+id,
-    //           'type':'delete',
-    //           'data':{_token:"{{ csrf_token() }}",
-    //           id:id},
-    //           success:function(msg){
-
-    //             alert('Role Deleted Successfully')
-
-    //           }
-    //       })
-    //   })
-    // })
-</script>
-@endsection
-

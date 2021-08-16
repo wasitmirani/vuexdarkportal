@@ -75,16 +75,16 @@ class HelperComponent
                     "title" => 'User Management',
                     "icon" => "user",
                     "color_code" => "",
-                    // "can" => "",
-                    // "v-can" => "",
+                    "can" => "",
+                    "v-can" => "",
                     "sub_menu" => [
                         setSubMenu(
-                            "/users",
+                            null,
                             "Users",
                             "users",
                             null,
                             null,
-                            null,
+                            "/users",
                         ),
                         setSubMenu(
                             null,
