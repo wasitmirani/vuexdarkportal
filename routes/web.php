@@ -34,10 +34,13 @@ Route::get('/dashboard',[BackendController::class,'index'])->name('dashboard');
 
 Route::get('/payment/customer-area/pay-secure/{package_name}/{token}',[ChargeController::class,'chargeStripePayment'])->name('charge.stripe.payment');
 
+Route::middleware('auth')->group(function(){
+    Route::resource('roles',RoleController::class);
+    Route::resource('users',UserController::class);
+    Route::resource('permissions',PermissionsController::class);
 
-Route::resource('roles',RoleController::class);
-Route::resource('users',UserController::class);
-Route::resource('permissions',PermissionsController::class);
+});
+
 
 
 

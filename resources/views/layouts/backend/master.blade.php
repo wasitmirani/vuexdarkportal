@@ -119,6 +119,7 @@
     <!-- END: Page JS-->
     <script src="{{asset('app-assets/js/scripts/pages/app-invoice-list.min.js')}}"></script>
     <script src="{{asset('assets/select/select2.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/icons/css/font-awesome.min.css') }}">
     <!-- Scripts -->
 
     <script>

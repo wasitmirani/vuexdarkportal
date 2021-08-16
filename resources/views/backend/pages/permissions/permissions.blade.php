@@ -53,7 +53,7 @@
                         </td>
 
                         <td>
-                         <a class="btn btn-warning" href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
+                         <a class="btn btn-warning" href="{{ route('permissions.edit',$permission->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                           |
 
                           <form action="{{ route('permissions.destroy',$permission->id) }}" method="post">
@@ -61,7 +61,7 @@
                             {{ method_field('DELETE') }}
                             <button type="submit"  class="btn btn-danger delButton"  data-id="{{ $permission->id }}">
 
-                                Delete
+                                <i class="fa fa-trash" aria-hidden="true"></i>
 
                                  </button>
                         </form>
