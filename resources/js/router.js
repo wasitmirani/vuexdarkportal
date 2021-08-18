@@ -13,16 +13,7 @@ const routes = [{
         component: () => setComponent("dashboard/Home"),
         name: "dashboard",
     },
-    {
-        path: '/articles',
-        component: () => setComponent("content/article/Articles"),
-        name: "stripe",
-    },
-    {
-        path: '/payment/stripe/generate/link/',
-        component: () => setComponent("payment/Stripe/StripeLinkGen"),
-        name: "Stripe Payment Link Generate",
-    },
+
 
 ]
 
