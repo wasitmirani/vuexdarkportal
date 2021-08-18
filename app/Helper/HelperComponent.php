@@ -97,7 +97,7 @@ class HelperComponent
                         setSubMenu(
                             null,
                             "Permissions",
-                            "permission",
+                            "permissions",
                             null,
                             null,
                             "/permissions",

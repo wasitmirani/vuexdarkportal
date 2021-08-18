@@ -10,6 +10,7 @@ window.Vue = require('vue').default;
 import router from "./router";
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+  import Multiselect from 'vue-multiselect'
 
 import Vuesax from 'vuesax'
 import VueI18n from 'vue-i18n'
@@ -20,7 +21,7 @@ Vue.use(VueToast);
 
 
 Vue.use(VueI18n)
-
+Vue.component('multiselect', Multiselect)
 
 /**
  * The following block of code may be used to automatically register your

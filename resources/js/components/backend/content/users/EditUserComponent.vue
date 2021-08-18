@@ -17,7 +17,7 @@
 
 
                     </div>
-                <span >Add Users</span>
+                <span >Edit User</span>
 
 
                   </h2>
@@ -26,7 +26,7 @@
                       </router-link>
              </div>
              <div class="card-body">
-      <form v-on:submit.prevent="addUser">
+      <form v-on:submit.prevent="editUser">
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
@@ -118,7 +118,7 @@
     },
     created(){
 
-        axios.get('/roles')
+        axios.get('/user')
         .then((response)=>{
             this.roles = response.data.roles
             console.log(response.data.roles)
@@ -126,6 +126,16 @@
         .catch((error)=>{
             console.log(error)
         })
+
+
+            axios.get('user/'+this.$route.params.id).then((response)=>{
+                console.log(response)
+
+            }).catch((error)=>{
+                console.log(error)
+
+            })
+
     }
 
     }

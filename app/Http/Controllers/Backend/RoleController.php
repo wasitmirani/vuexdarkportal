@@ -18,7 +18,7 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $q=request('query');
 
@@ -26,11 +26,6 @@ class RoleController extends Controller
         ->with('users')
         ->with('permissions')
         ->get();
-
-    
-
-
-
        return view('backend.pages.roles.roles',['roles'=>$roles]);
     }
 

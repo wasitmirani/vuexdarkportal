@@ -17,7 +17,7 @@
 
 
                     </div>
-                <span >Add Roles</span>
+                <span >Edit Roles</span>
 
 
                   </h2>
@@ -27,10 +27,10 @@
              </div>
              <div class="card-body">
 
-                 <form v-on:submit.prevent="addRole">
+                 <form v-on:submit.prevent="editRole">
                      <div class="form-group">
                          <label>Role Name</label>
-                         <input class="form-control" v-model="role.name" type="text">
+                         <input class="form-control" v-model="role.name" value="" type="text">
                      </div>
                    <div class="form-group">
 
@@ -42,7 +42,7 @@
 
                    </div>
                    <div class="form-group">
-                       <button class="btn btn-primary">Add Role</button>
+                       <button class="btn btn-primary">Update Role</button>
                    </div>
                  </form>
 
@@ -59,6 +59,7 @@
           data(){
               return{
                   users:[],
+                  role:[],
                   selectedUser:[],
                   role:{
                       name:"",
@@ -67,8 +68,8 @@
           },
           methods:{
 
-              addRole(){
-                     var formData = new FormData();
+              editRole(){
+            var formData = new FormData();
            let userBox=[];
 
    let users=[];
@@ -78,9 +79,8 @@
       }
       formData.append("users",userBox);
       formData.append('name',this.role.name)
-
-
-      axios.post('/roles',formData)
+      formData.append('id',this.role.id)
+      axios.post('/role/update',formData)
       .then((response)=>{
 
         console.log(response)
@@ -96,15 +96,26 @@
 
               }
 
+
+
+
           },
 
           created(){
-              axios.get('users').then((response)=>{
-                  this.users = response.data.users
+
+              axios.get('/role/'+this.$route.params.id).then((response)=>{
+                  this.role = response.data
+
               }).catch((error)=>{
                   console.log(error)
               })
 
+               axios.get('/users').then((response)=>{
+                   this.users = response.data.users
+
+               }).catch((error)=>{
+                   console.log(error)
+               })
           }
 
     }

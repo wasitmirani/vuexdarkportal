@@ -24,10 +24,42 @@ const routes = [{
         name: "users",
     },
     {
+        path: '/list/users',
+        component: () => setComponent("content/users/UsersList"),
+        name: "listuser",
+    },
+    {
+        path: '/edit/user/:id',
+        component: () => setComponent("content/users/EditUser"),
+        name: "edituser",
+    },
+    {
         path: '/roles',
         component: () => setComponent("content/roles/Roles"),
         name: "roles",
     },
+    {
+        path: '/edit/role/:id',
+        component: () => setComponent("content/roles/EditRole"),
+        name: "editroles",
+    },
+
+    {
+        path: '/list/roles',
+        component: () => setComponent("content/roles/ListRole"),
+        name: "listroles",
+    },
+    {
+        path: '/permissions',
+        component: () => setComponent("content/permissions/Permissions"),
+        name: "permissions",
+    },
+    {
+        path: '/list/permissions',
+        component: () => setComponent("content/permissions/PermissionList"),
+        name: "listpermissions",
+    },
+
     {
         path: '/payment/stripe/generate/link/',
         component: () => setComponent("payment/Stripe/StripeLinkGen"),
