@@ -1,8 +1,5 @@
 
-@php
-$sidebar=sideBarMenu();
-// dd($sidebar);
-@endphp
+ 
 
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">

@@ -85,8 +85,8 @@
 
         axios.get('/users')
         .then((response)=>{
-            this.users = response.data.allusers.data
-            console.log(response.data.allusers.data)
+            this.users = response.data
+            console.log(response.data)
         })
         .catch((error)=>{
             console.log(error)

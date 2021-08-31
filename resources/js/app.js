@@ -10,7 +10,7 @@ window.Vue = require('vue').default;
 import router from "./router";
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
-  import Multiselect from 'vue-multiselect'
+import Multiselect from 'vue-multiselect'
 
 import Vuesax from 'vuesax'
 import VueI18n from 'vue-i18n'
