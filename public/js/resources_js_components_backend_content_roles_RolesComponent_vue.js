@@ -267,35 +267,6 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("multiselect", {
-                    staticClass: "form-group",
-                    attrs: {
-                      label: "name",
-                      "track-by": "id",
-                      "close-on-select": false,
-                      "clear-on-select": false,
-                      options: _vm.users,
-                      multiple: true,
-                      "preselect-first": true,
-                      "preserve-search": true,
-                      taggable: true
-                    },
-                    model: {
-                      value: _vm.selectedUser,
-                      callback: function($$v) {
-                        _vm.selectedUser = $$v
-                      },
-                      expression: "selectedUser"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
               _vm._m(2)
             ]
           )
@@ -330,6 +301,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
+      _vm._v('">\n                       '),
       _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Add Role")])
     ])
   }

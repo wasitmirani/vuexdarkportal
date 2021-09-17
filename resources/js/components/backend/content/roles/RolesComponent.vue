@@ -36,7 +36,7 @@
 
                                   <multiselect class="form-group"
                                   label="name" v-model="selectedUser" track-by="id"  :close-on-select="false"  :clear-on-select="false" :options="users"
-                                  :multiple="true"  :preselect-first="true"      :preserve-search="true" :taggable="true" >
+                                  :multiple="true"  :preselect-first="true"      :preserve-search="true" :taggable="true" @tag="addTag>
 
                                   </multiselect>
 

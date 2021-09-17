@@ -86,8 +86,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/users').then(function (response) {
-      _this.users = response.data.allusers.data;
-      console.log(response.data.allusers.data);
+      _this.users = response.data;
+      console.log(response.data);
     })["catch"](function (error) {
       console.log(error);
     });
